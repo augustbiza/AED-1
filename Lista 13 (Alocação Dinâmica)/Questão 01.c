@@ -11,10 +11,15 @@ int main(void) {
     int *num2 = (int*)malloc(sizeof(int));
         *num2 = 7;
 
-    int *soma;
+    int *soma = (int*)malloc(sizeof(int));
     *soma = *num1 + *num2;
 
     printf("%d\n", *soma);
+
+//liberar espaço na memória
+    free(num1);
+    free(num2);
+    free(soma);
 
     return 0;
 }
