@@ -3,36 +3,30 @@
 #include <stdlib.h>
 
 void titulo() {
-    printf("Soma de dois números (função e malloc)!\n");
+    printf("Soma de dois numeros (malloc)");
 }
 
-void leiaNum(int *p) {
-    printf("Informe um número: ");
-    scanf("%d", p);
+void leiaNum(int *num) {//endereço na qual ponteiro aponta copiado em outro ponteiro (*num)
+    printf("Informe um numero: ");
+    scanf("%d", num);//altero o valor que esta no endereco na qual o ponteiro aponta
 }
 
 void facaSoma(int *result, int num1, int num2) {
-    *result = num1 + num2;
+    *result = num1 +  num2;//valor para qual o ponteiro aponta é a soma dos valores num1 e num2
 }
 
-int main(void) {
-
+int main (void) {
     titulo();
 
-    int *a = (int*)malloc(sizeof(int));
-    int *b = (int*)malloc(sizeof(int));
+    int *a = (int*)malloc(sizeof(int));//ponteiro que aponta para um local que cabe int
+    leiaNum(a);//passei endereço de memoria que o ponteiro aponta
 
-    leiaNum(a);
+    int *b = (int*)malloc(sizeof(int));
     leiaNum(b);
 
-    int *soma = (int*)malloc(sizeof(int));
-
-    facaSoma(soma, *a, *b);
-    printf("%d\n", *soma);
-
-    free(a);
-    free(b);
-    free(soma);
+    int *soma = (int*)malloc(sizeof(int));//ponteiro que aponta para um local que cabe int
+    facaSoma(soma, *a, *b);//parametros: endereço de memo que ponteiro soma aponta, valor que o ponteiro a aponta, valor que o ponteiro b aponta
+    printf("soma = %d", *soma);
 
     return 0;
 }
