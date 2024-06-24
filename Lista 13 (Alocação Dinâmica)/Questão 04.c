@@ -8,22 +8,39 @@ void leiaVal(int *val) {
     scanf("%d", val);
 }
 
-void primo(int val, int *maiormenor) {
+//verifica se o numero é primo
+bool primoVerif(int num) {
+    for(int c = 2; c <= num/2; c++) {
+        if(num % c == 0) return false;
+        else return true;
+    }
+    
+}
 
-    int numAnt, numProx;
+void primo(int val, int *maiormenor, int *menormaior) {
 
-    for(int c = 2; c < )
+    *maiormenor = val - 1;
+    *menormaior = val + 1;
+
+    while(!primoVerif(*menormaior)) {
+        *menormaior++;
+    }
+
+    while(!primoVerif(*maiormenor)) {
+        *menormaior--;
+    }
 
 }
 
+
 int main(void) {
 
-    int m, p1;
+    int m, p1 = 0, p2 = 0;
     leiaVal(&m);
 
-    primo(m, &p1);
+    primo(m, &p1, &p2);
 
-    printf("%d", p1);
+    printf("Maior primo < %d = %d\nMenor primo > %d = %d", m, p1, m, p2);
 
     return 0;
 }
