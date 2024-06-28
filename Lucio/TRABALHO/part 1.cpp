@@ -1,6 +1,7 @@
 #include <iostream>
+#include <string>
 #define _max 100
-
+//DATA
 class Data {
     private:
         int dia, mes, ano;
@@ -25,9 +26,7 @@ class Data {
             std::cin>>ano;
         }
 
-        //gets
-        
-
+        //gets 
         int getDia() {
             return dia;
         }
@@ -66,21 +65,34 @@ class Data {
          
 };
 
+//PESSOA
+class Pessoa {
+    private:
+        std::string nome;
+        Data nascimento;
+        static int qtPessoas;
+
+    public:
+        void setNome() {
+            std::cout<<"Informe seu nome: "<<std::endl;
+            getline(std::cin, nome);
+        }
+        std::string getNome() {
+            return nome;
+        }
+        void mostarNome() {
+            std::cout << getNome();
+        }
+    
+};
+int Pessoa::qtPessoas = 0;
 
 
 
+//MAIN
 int main(void) {
 
     system("cls");
-/*
-    Data d0;
-        d0.setDia(27);
-        d0.setMes(06);
-        d0.setAno(2024);
-        std::cout<<d0.getDia()<<"/"<<d0.getMes()<<"/"<<d0.getAno();
-
-        std::cout<<std::endl;
-*/
 
 /*
     Data *d1 = new Data();
@@ -94,8 +106,11 @@ int main(void) {
 */
 
     Data *d10 = new Data;
-    d10->setData();
-    d10->mostraData();
+        d10->setData();
+        d10->mostraData();
+
+    Pessoa *p10 = new Pessoa;
+        p10->setNome();
 
     return 0;
 }
