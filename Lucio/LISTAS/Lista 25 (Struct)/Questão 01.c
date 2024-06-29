@@ -3,6 +3,8 @@
 #include <string.h>
 
 const int tam = 3;
+static int c = 0;
+
 //classe
 typedef struct
 {
@@ -10,6 +12,8 @@ typedef struct
     char nome[50];
 
 }Pessoa;
+
+
 
 //apresentação
 void comeca(void) {
@@ -19,7 +23,7 @@ void comeca(void) {
 
 int funcionalidadeMenu(void) {
     int tipo;
-    printf("Escalha uma opcao:\n1-Cadastar aluno\n2-Listar aluno\n3-Media das idades da turma\nEu escolho:");
+    printf("\nEscalha uma opcao:\n1-Cadastar aluno\n2-Listar aluno\n3-Media das idades da turma\nEu escolho:");
     scanf("%d", &tipo);
 
     return tipo;
@@ -41,12 +45,13 @@ void cadastrar(Pessoa p[]) {
     scanf("%s", &p[c].nome);
     printf("Informe sua idade: ");
     scanf("%i", &p[c].idade);
+    c++;
 }
 
 //listagem
 void listar (Pessoa p[]) {
-    for(int i = 0; i <= c; i++){
-        printf("Aluno: %s  Nota: %d\n", p[i].nome, p[i].idade);
+    for(int i = 0; i < c; i++){
+        printf("Aluno: %s  Idade: %d\n", p[i].nome, p[i].idade);
     }
 }
 
@@ -61,10 +66,24 @@ int main(void) {
 
     Pessoa alunos[tam];//vetor 'alunos' do tipo 'Pessoa'
 
-    int c = 0;
-    int escolha = funcionalidadeMenu();
+    int escolha;
 
-    funcionalidadeComando(alunos, escolha);
+    while(c < tam) {
+        escolha = funcionalidadeMenu();
+        funcionalidadeComando(alunos, escolha);
+    }
+    if(c = tam) {
+        escolha = funcionalidadeMenu();
+            if(escolha != 1) {
+                funcionalidadeComando(alunos, escolha);
+            }
+            else {
+                printf("Limite de cadastro atingido!\n\n");
+            }
+    }
+    
+            
+    
 
 
     return 0;
