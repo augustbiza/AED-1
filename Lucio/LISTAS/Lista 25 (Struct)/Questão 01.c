@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-const int tam = 3;
-static int c = 0;
+const int tam = 3;//tamanho maximo de cadastro
+static int c = 0;//contagem de pessoas
 
 //classe
 typedef struct
@@ -34,7 +34,7 @@ void funcionalidadeComando(Pessoa a[], int n) {
     switch(n) {
             case 1: cadastrar(a); break;
             case 2: listar(a); break;
-           // case 3: media(); break;
+           // case 3: media(a); break;
             default: printf("Opcao Invalida!\n\n");
         }
 }
@@ -49,10 +49,15 @@ void cadastrar(Pessoa p[]) {
 }
 
 //listagem
-void listar (Pessoa p[]) {
+void listar(Pessoa p[]) {
     for(int i = 0; i < c; i++){
         printf("Aluno: %s  Idade: %d\n", p[i].nome, p[i].idade);
     }
+}
+
+//media
+void media(Pessoa p[]) {
+
 }
 
 
