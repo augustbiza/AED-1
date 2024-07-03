@@ -22,6 +22,8 @@ int posicao(void) {
         printf("Informe a posicao que deseja trocar: ");
         scanf("%d", &p);
     }while(p <= 0 || p > tam);
+
+    return p;
 }
 
 void troca(float *v, int p1, int p2) {
