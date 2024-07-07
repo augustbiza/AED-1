@@ -14,7 +14,7 @@ void leiaMes(int *m) {
 
 }
 
-int diasMes(int m) {
+void diasMes(int m) {
 
     if(m != 0) {
         int dias;
