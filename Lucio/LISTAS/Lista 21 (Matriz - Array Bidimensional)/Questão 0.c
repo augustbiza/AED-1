@@ -1,4 +1,4 @@
-//ESTRUTURA DA LISTA
+//Dados da questão
 #include <stdio.h>
 #include <stdlib.h>
 const int NUM_LIN = 3; 
@@ -19,14 +19,24 @@ int main() {
 }
 
 /*
+            codigos que se repetem muito
 
-for(int l = 0; l < NUM_LIN; l++) {
-    for(int c = 0; c < NUM_COL; c++) {
-        printf("%.1f ", M2[l][c]);
+MATRIZ NORMAL
+    for(int l = 0; l < NUM_LIN; l++) {
+        for(int c = 0; c < NUM_COL; c++) {
+            printf("%.1f ", M2[l][c]);
+        }
+        printf("\n");
     }
-    printf("\n");
-   }
 
+MATRIZ TRANSPOSTA: TROCA LIN <--> COL
+
+    for(int l = 0; l < NUM_COL; l++) {
+        for(int c = 0; c < NUM_LIN; c++) {
+            printf("%.1f ", M2[l][c]);
+        }
+    printf("\n");
+    }
 
 
 
