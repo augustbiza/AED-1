@@ -12,7 +12,7 @@ int main(void) {
     std::cout<<"Qual a distancia da escada para a parede? ";
     std::cin>>distancia;
 
-    ang = ang * (3.14 / 180.0);
+    ang = ang * (3.14 / 180.0);//converter graus em radianos
     escada = distancia / cos(ang);
     std::cout<<"Escada = "<<escada<<std::endl;
 
