@@ -12,6 +12,7 @@ int main(void) {
     std::cout<<"Informe a medida do angulo:  ";
     std::cin>>ang;
 
+    ang = ang * (3.14 / 180.0);//converter graus em radianos
     escada = parede / sin(ang);
 
     std::cout<<"Escada = "<<escada<<std::endl;
