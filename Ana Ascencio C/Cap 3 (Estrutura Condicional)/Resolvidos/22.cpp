@@ -4,7 +4,7 @@
 int main(void) {
     system("cls");    
 
-    int cod, tempo;
+    int tempo;
     std::cout<<"Informe o tempo de servico:  ";
     std::cin>>tempo;
 
