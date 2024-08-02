@@ -35,7 +35,6 @@ int main(void) {
             if(salB >= 400) imp = salB * 0.06;
             else imp = salB * 0.04;
         }
-        else if(categ == 'O');
 
     int grat;
         if(turno == 'N' && horas > 80) grat = 50;
