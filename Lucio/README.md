@@ -1,3 +1,3 @@
-# AEDS 1 Lucio
+# AED 1 Lucio
  Professor Lucio Mauro
  C/C++
