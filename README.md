@@ -1,3 +1,2 @@
-Ciência da Computação - PUC Minas
-Algoritmos e Estruturas de Dados
-C/C++
+# Algoritmos e Estruturas de Dados I(AEDs)
+Linguagens: C/C++
