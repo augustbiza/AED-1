@@ -4,7 +4,7 @@
 void crescente(int *v, int x) {
     int aux;
     for(int i = 0; i < x; i++) {
-        for(int j = 0; j < x; j++) {
+        for(int j = i+1; j < x; j++) {
             if(v[i] > v[j]) {
                 aux = v[i];
                 v[i] = v[j];
@@ -17,7 +17,7 @@ void crescente(int *v, int x) {
 void decrescente(int *v, int x) {
     int aux;
     for(int i = 0; i < x; i++) {
-        for(int j = 0; j < x; j++) {
+        for(int j = i+1; j < x; j++) {
             if(v[i] < v[j]) {
                 aux = v[i];
                 v[i] = v[j];
@@ -29,14 +29,18 @@ void decrescente(int *v, int x) {
 }
 
 void mostrar(int *v, int x) {
-
+    int i = 0;
+    while(i < x) {
+        printf("%d ", v[i]);
+        i++;
+    }
 }
 
 int main(void) {
 
     int v[8] = {2,1,4,5,7,8,6,3};
 
-    decresce(v, 8);
+    decrescente(v, 8);
     mostrar(v, 8);
     printf("\n");
     crescente(v, 8);
